@@ -134,7 +134,22 @@ document.addEventListener("DOMContentLoaded", function () {
     },
             {
       url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Video%202025-05-29%20at%2022.54.50.mp4?updatedAt=1748534122157",
-      caption: "King Atta",
+      caption: "molor euy",
+      isVideo: true,
+    },
+            {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Video%202025-05-29%20at%2022.58.36.mp4?updatedAt=1748534473472",
+      caption: "kursi tegak kok dilawan:v",
+      isVideo: true,
+    },
+            {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/Untitled%20video%20-%20Made%20with%20Clipchamp%20(2).mp4?updatedAt=1748534865072",
+      caption: "serem ih",
+      isVideo: true,
+    },
+            {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Video%202025-05-29%20at%2023.06.58.mp4?updatedAt=1748534856031",
+      caption: "pusing deh",
       isVideo: true,
     },
   ];
