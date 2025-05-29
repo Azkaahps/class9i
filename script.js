@@ -179,8 +179,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(modal);
 
     const modalContent = document.createElement("div");
-    modalContent.style.maxWidth = "90vw";
-    modalContent.style.maxHeight = "90vh";
+    modalContent.style.maxWidth = "50vw";
+    modalContent.style.maxHeight = "75vh";
     modalContent.style.borderRadius = "8px";
     modal.appendChild(modalContent);
 
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closeBtn.textContent = "×";
     closeBtn.style.cssText = `
       position: absolute;
-      top: 20px;
+      top: 40px;
       right: 30px;
       color: white;
       font-size: 40px;
