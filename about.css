@@ -2,7 +2,7 @@
     --primary: #EBEBEB;
     --biru: #808EAA;
     --huruf: #153168;
-    --black: #141414;
+    --black: #194a8b;
     --tambahan: #0c1524;
 }
 * {
@@ -21,11 +21,14 @@ body {
 
 .nav-container {
     width: 100%;
+    top: 0;
     height: 25px;
     display: flex;
     position: fixed;
     z-index: 9999;
 }
+  
+  
 
 .header {
     width: 100%;
@@ -678,4 +681,39 @@ footer .credit a {
     .developer .go-to .cta{
         font-size: 1.5rem;
     }
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  padding: 10px;
+  font-size: 0.9rem;
 }

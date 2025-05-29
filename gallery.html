@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- ======= Navbar Start ======= -->
+  <nav>
+    <div class="nav-container">
+      <div class="header">
+        <a href="#">
+          <div class="navbar-logo">
+            <img src="gambar/logo text.png" alt="">
+          </div>
+        </a>
+        <div class="navbar">
+          <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li>
+              <a href="#" class="droptoggle">Media social</a>
+              <ul class="submenu">
+                <li><a href="https://www.instagram.com/weeare_from9i__">Instagram</a></li>
+              </ul>
+            </li>
+            <li><a href="profile.html">Profile</a></li>
+            <li id="btn-ngl"><a href="https://ngl.link/weeare_from9i__">NGL</a></li>
+          </ul>
+        </div>
+        <div class="ser-btn">
+          <ul>
+            <li id="bar-icon"><a href="#">&#9776;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- ======= Navbar End ======= -->
+
+  <!-- ======= Header Title ======= -->
+  <header style="text-align:center; font-size: 2rem; margin-top: 1rem;"></header>
+
+  <!-- ======= Upload Form ======= -->
+  <div style="text-align:center; margin: 1rem;">
+    <input type="file" id="imageUpload" accept="image/*">
+  </div>
+
+  <!-- ======= Gallery ======= -->
+  <div class="gallery" id="gallery"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
