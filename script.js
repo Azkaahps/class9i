@@ -192,8 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
     closeBtn.textContent = "×";
     closeBtn.style.cssText = `
       position: absolute;
-      top: 45px;
-      right: 30px;
+      top: 50px;
+      right: 28px;
       color: white;
       font-size: 40px;
       font-weight: bold;
