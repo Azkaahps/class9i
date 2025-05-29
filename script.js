@@ -19,6 +19,94 @@ document.addEventListener("DOMContentLoaded", function () {
       url: "https://ik.imagekit.io/pc2v41npm/1000200515.jpg?updatedAt=1748502038307",
       caption: "Ulang tahun Bu Fitri",
     },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/batikdaygirl.jpeg?updatedAt=1748520741706",
+      caption: "hari batik(cewe)",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/batikdayguy.jpeg?updatedAt=17485207420787",
+      caption: "hari batik (cowo)",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/bukber.jpeg?updatedAt=1748520741999",
+      caption: "Bukber kelas 9i",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/studytourjogja.jpeg?updatedAt=1748520750516",
+      caption: "Study Tour Jogja (Studio Gamplong)",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/bulisin.jpeg?updatedAt=1748520742915",
+      caption: "bu lisin tercinta (luplup)",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/bupur1.jpeg?updatedAt=1748520745519",
+      caption: "Bupur :3",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/pakrival.jpeg?updatedAt=1748520746205",
+      caption: "Pak Rival Nih",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/agustusguy.jpeg?updatedAt=1748520741719",
+      caption: "Agustusan (cowo)",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/agustus.jpeg?updatedAt=1748520741641",
+      caption: "Agustusan:v",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/after%20exam.jpeg?updatedAt=1748520742827",
+      caption: "After Exam:(",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/random%20girl.jpeg?updatedAt=1748520747583",
+      caption: "vintage",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/randomguy1.jpeg?updatedAt=1748520750849",
+      caption: "Vintage",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/randomguy.jpeg?updatedAt=1748520749717",
+      caption: "Random",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/noooo.jpeg?updatedAt=1748520754951",
+      caption: "ohhnooo",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/lucu%20haha.jpeg?updatedAt=1748520754800",
+      caption: "ditembak dia",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/hihi.jpeg?updatedAt=1748520753847",
+      caption: "Smile :)",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/default%20jir.jpeg?updatedAt=1748520753877",
+      caption: "Trio Dapa Skin Default:v",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/photo%203%20jir.jpeg?updatedAt=1748520755979",
+      caption: "Trio Dapa After Exam",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/spiderman%20dapa.jpeg?updatedAt=1748520756218",
+      caption: "Spidermen",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/papua.jpeg?updatedAt=1748522277006",
+      caption: "Pacee",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/anak%20ilang.jpeg?updatedAt=1748520741344",
+      caption: "anak siapa ini",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/vintage%20bree.jpeg?updatedAt=1748520751667",
+      caption: "Vintage jir",
+    },
   ];
 
   if (gallery) {
