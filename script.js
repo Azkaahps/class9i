@@ -127,6 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
       url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Image%202025-05-29%20at%2020.35.43.jpeg?updatedAt=1748532131291",
       caption: "irpan kecik",
     },
+        {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Video%202025-05-29%20at%2022.47.30.mp4?updatedAt=1748533680007",
+      caption: "King Atta",
+      isVideo: true,
+    },
   ];
 
   if (gallery) {
