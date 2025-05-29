@@ -107,6 +107,26 @@ document.addEventListener("DOMContentLoaded", function () {
       url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/vintage%20bree.jpeg?updatedAt=1748520751667",
       caption: "Vintage jir",
     },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Image%202025-05-29%20at%2020.35.43.jpeg?updatedAt=1748532131291",
+      caption: "irpan kecik",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Image%202025-05-29%20at%2020.35.42.jpeg?updatedAt=1748532131287",
+      caption: "unyu unyu",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Image%202025-05-29%20at%2020.35.45.jpeg?updatedAt=1748532131295",
+      caption: "Pramuka 2022/2023",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Image%202025-05-29%20at%2020.35.46.jpeg?updatedAt=1748532131406",
+      caption: ":v",
+    },
+    {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Image%202025-05-29%20at%2020.35.43.jpeg?updatedAt=1748532131291",
+      caption: "irpan kecik",
+    },
   ];
 
   if (gallery) {
@@ -114,46 +134,35 @@ document.addEventListener("DOMContentLoaded", function () {
       const div = document.createElement("div");
       div.className = "gallery-item";
 
-      const img = document.createElement("img");
-      img.src = item.url;
-      img.alt = item.caption;
+      // Cek apakah item adalah video atau gambar
+      if (item.isVideo) {
+        const video = document.createElement("video");
+        video.src = item.url;
+        video.alt = item.caption;
+        video.controls = true; // Menambahkan kontrol pemutar video
+        video.style.maxWidth = "100%"; // Mengatur lebar video agar responsif
 
-      const caption = document.createElement("div");
-      caption.className = "caption";
-      caption.textContent = item.caption;
+        const caption = document.createElement("div");
+        caption.className = "caption";
+        caption.textContent = item.caption;
 
-      div.appendChild(img);
-      div.appendChild(caption);
+        div.appendChild(video);
+        div.appendChild(caption);
+      } else {
+        const img = document.createElement("img");
+        img.src = item.url;
+        img.alt = item.caption;
+
+        const caption = document.createElement("div");
+        caption.className = "caption";
+        caption.textContent = item.caption;
+
+        div.appendChild(img);
+        div.appendChild(caption);
+      }
+
       gallery.appendChild(div);
     });
-
-    document
-      .getElementById("imageUpload")
-      ?.addEventListener("change", function (event) {
-        const file = event.target.files[0];
-        if (file && file.type.startsWith("image/")) {
-          const reader = new FileReader();
-          reader.onload = function (e) {
-            const imgSrc = e.target.result;
-
-            const div = document.createElement("div");
-            div.className = "gallery-item";
-
-            const img = document.createElement("img");
-            img.src = imgSrc;
-            img.alt = "User uploaded image";
-
-            const caption = document.createElement("div");
-            caption.className = "caption";
-            caption.textContent = "Uploaded Image";
-
-            div.appendChild(img);
-            div.appendChild(caption);
-            gallery.prepend(div);
-          };
-          reader.readAsDataURL(file);
-        }
-      });
 
     // Modal preview
     const modal = document.createElement("div");
@@ -169,11 +178,15 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     document.body.appendChild(modal);
 
-    const modalImg = document.createElement("img");
-    modalImg.style.maxWidth = "90vw";
-    modalImg.style.maxHeight = "90vh";
-    modalImg.style.borderRadius = "8px";
-    modal.appendChild(modalImg);
+    const modalContent = document.createElement("div");
+    modalContent.style.maxWidth = "90vw";
+    modalContent.style.maxHeight = "90vh";
+    modalContent.style.borderRadius = "8px";
+    modal.appendChild(modalContent);
+
+    const modalMedia = document.createElement("div");
+    modalMedia.id = "modal-media";
+    modalContent.appendChild(modalMedia);
 
     const closeBtn = document.createElement("span");
     closeBtn.textContent = "×";
@@ -187,16 +200,27 @@ document.addEventListener("DOMContentLoaded", function () {
       cursor: pointer;
       user-select: none;
     `;
-    modal.appendChild(closeBtn);
+    modalContent.appendChild(closeBtn);
 
-    function openModal(src) {
-      modalImg.src = src;
+    function openModal(src, isVideo) {
+      if (isVideo) {
+        const video = document.createElement("video");
+        video.src = src;
+        video.controls = true;
+
+        modalMedia.appendChild(video);
+      } else {
+        const img = document.createElement("img");
+        img.src = src;
+
+        modalMedia.appendChild(img);
+      }
       modal.style.display = "flex";
     }
 
     function closeModal() {
       modal.style.display = "none";
-      modalImg.src = "";
+      modalMedia.innerHTML = "";
     }
 
     closeBtn.addEventListener("click", closeModal);
@@ -206,53 +230,61 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    function addClickEventToImage(img) {
-      img.style.cursor = "pointer";
-      img.addEventListener("click", () => openModal(img.src));
+    function addClickEventToMedia(mediaElement, isVideo) {
+      mediaElement.style.cursor = "pointer";
+      mediaElement.addEventListener("click", () =>
+        openModal(mediaElement.src, isVideo)
+      );
     }
 
-    document
-      .querySelectorAll(".gallery-item img")
-      .forEach(addClickEventToImage);
+    document.querySelectorAll(".gallery-item img").forEach((img) => {
+      addClickEventToMedia(img, false);
+    });
+
+    document.querySelectorAll(".gallery-item video").forEach((video) => {
+      addClickEventToMedia(video, true);
+    });
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
           if (node.classList && node.classList.contains("gallery-item")) {
             const img = node.querySelector("img");
-            if (img) addClickEventToImage(img);
+            const video = node.querySelector("video");
+            if (img) addClickEventToMedia(img, false);
+            if (video) addClickEventToMedia(video, true);
           }
         });
       });
     });
     observer.observe(gallery, { childList: true });
   }
+});
 
-  // ---------- Navbar toggle ----------
-  const barbtn = document.getElementById("bar-icon");
-  const dropdown = document.getElementById("menu");
+// ---------- Navbar toggle ----------
+const barbtn = document.getElementById("bar-icon");
+const dropdown = document.getElementById("menu");
 
-  barbtn.addEventListener("click", () => {
-    dropdown.classList.toggle("show");
+barbtn.addEventListener("click", () => {
+  dropdown.classList.toggle("show");
+});
+
+// submenu
+
+const droptog = document.querySelectorAll(".droptoggle");
+const submenu = document.getElementsByClassName("submenu");
+
+for (let x = 0; x < droptog.length; x++) {
+  droptog[x].addEventListener("click", () => {
+    submenu[x].classList.toggle("submenushow");
   });
 
-  // submenu
+  // Klik diluar sidebar untuk menghilangkan nav
+  const barbtn = document.querySelector("bar-icon");
 
-  const droptog = document.querySelectorAll(".droptoggle");
-  const submenu = document.getElementsByClassName("submenu");
-
-  for (let x = 0; x < droptog.length; x++) {
-    droptog[x].addEventListener("click", () => {
-      submenu[x].classList.toggle("submenushow");
-    });
-
-    // Klik diluar sidebar untuk menghilangkan nav
-    const barbtn = document.querySelector("bar-icon");
-
-    document.addEventListener("click", function (e) {
-      if (!barbtn.contains(e.target) && !navbarNav.contains(e.target)) {
-        navbarNav.classList.remove("active");
-      }
-    });
-  }
-});
+  document.addEventListener("click", function (e) {
+    if (!barbtn.contains(e.target) && !navbarNav.contains(e.target)) {
+      navbarNav.classList.remove("active");
+    }
+  });
+}
