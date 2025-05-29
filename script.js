@@ -132,6 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
       caption: "King Atta",
       isVideo: true,
     },
+            {
+      url: "https://ik.imagekit.io/pc2v41npm/photo%209i%20random/WhatsApp%20Video%202025-05-29%20at%2022.54.50.mp4?updatedAt=1748534122157",
+      caption: "King Atta",
+      isVideo: true,
+    },
   ];
 
   if (gallery) {
