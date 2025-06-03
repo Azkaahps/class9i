@@ -1,4 +1,4 @@
-# XI-8_Website
-website untuk kelas XI-8 di SMAN 10 BEKASI
+# IX-9 SMPN 32 Bekasi
+website untuk kelas IX-9 SMPN 32 BEKASI
 
-sebuah website untuk memperkenalkan serta sebagai portofolio untuk kelas XI-8
+sebuah website untuk memperkenalkan serta sebagai portofolio untuk kelas IX-9
